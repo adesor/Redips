@@ -2,7 +2,7 @@
 Redips - A basic web crawler
 Compatible with Python 2.7.X
 """
-
+import urllib2
 from bs4 import BeautifulSoup
 from urllib2 import urlopen
 from urlparse import *
