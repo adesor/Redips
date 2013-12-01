@@ -21,9 +21,6 @@ class Redips:
         crawl the input url for links
         string -> list(string)
         """
-
-        # Reset the crawler
-        self.__init__()
         
         print "Crawling " + seed_url
 
