@@ -38,7 +38,7 @@ class Redips:
             if link not in self.crawled_links:
                 self.crawl(link)
 
-        return fetched_links
+        return self.fetched_links
             
     def get_url(self, url):
         """
