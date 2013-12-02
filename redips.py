@@ -62,7 +62,11 @@ class Redips:
         Url -> string
         Return the source page of the input url
         """
-        return url.read()
+        try:
+            page = url.read()
+        except:
+            return ""
+        return page
 
     def extract_links(self, seed_url):
         """
@@ -70,26 +74,22 @@ class Redips:
         Return a list of links on the input seed url
         """
         fetched_links = []
-        url = None
-        source_page = None
-
+        
         # Open the seed url
         url = self.get_url(seed_url)
         
         # Get the source page of the url
-        if url:
-            source_page = self.get_source_page(url)
+        source_page = self.get_source_page(url)
         
-        if source_page:
-            # Make a Beautiful Soup of the source page
-            soup = BeautifulSoup(source_page)
+        # Make a Beautiful Soup of the source page
+        soup = BeautifulSoup(source_page)
         
-            # Extract links
-            for link in soup.find_all('a'):
-                fetched_link = link.get('href')
-                if fetched_link:
-                    fetched_link = self.convert_to_absolute(url.geturl(), fetched_link)
-                    fetched_links.append(fetched_link)
+        # Extract links
+        for link in soup.find_all('a'):
+            fetched_link = link.get('href')
+            if fetched_link:
+                fetched_link = self.convert_to_absolute(url.geturl(), fetched_link)
+                fetched_links.append(fetched_link)
 
         return fetched_links
 
