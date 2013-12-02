@@ -13,5 +13,5 @@ In Python 2.7.X,
 
 To fetch only the links on the seed url:
 
->> redips.extract_links('http://github.com')
+>>> redips.extract_links('http://github.com')
 
