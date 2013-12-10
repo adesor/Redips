@@ -55,6 +55,11 @@ To specify a file other than the default redips.pickle file for pickling the cra
 >>> redips = Redips(pickle='foo.pickle')
 ```
 
+To crawl a single page:
+```python
+>>> redips.crawl_page('http://foo.bar')
+```
+
 To access the index:
 ```python
 >>> redips.get_index()
