@@ -74,3 +74,18 @@ To reset the list of URLs to crawl:
 ```python
 >>> redips.reset_to_crawl()
 ```
+
+To merge the index with another index:
+```python
+>>> redips.merge_index(index)
+```
+
+To merge the graph with another graph:
+```python
+>>> redips.merge_graph(graph)
+```
+
+To merge the data of another Redips object with your Redips object:
+```python
+>>> redips.merge(anotherRedips)
+```
